@@ -1,3 +1,6 @@
 /obj
 SharpSem4Home.csproj
+/bin
+.vscode
+
 
