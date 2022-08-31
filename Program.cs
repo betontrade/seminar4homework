@@ -33,7 +33,7 @@ Console.WriteLine("Число "+ num + " в степени " + q + " равня�
 //________________Задача 27__________________
 //  Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
-/*
+
 
 int Dlinna (int n)
 
@@ -47,26 +47,26 @@ for (i = 1; n>10; i++)
 return i;
 }
 
-
 int Sum (int x, int y)
 {
     int cifra = x;
     int colvocif = y;
-    int pric = 1;
     int summaVs =0;
+    int powMax = Convert.ToInt32(Math.Pow(10, colvocif+1));
 
     while (colvocif > 0)
     {
-        int count = pric;
-        pric = pric*10;
+        int count = powMax;   // 10000  Math.Pow(10, colvocif);
+        powMax = powMax/10;   // 231 % 1000 / 100
         colvocif--;
-        int simvol = cifra%pric/count;
+        int simvol = cifra%powMax/(powMax / 10);
         //Console.WriteLine(simvol);
         summaVs = summaVs+simvol;
     }
     //Console.WriteLine(summaVs);
     return summaVs;
 }
+
 
 Console.Write("пожалуйста введите число: ");
 int nnn = Convert.ToInt32(Console.ReadLine());
@@ -77,7 +77,7 @@ int sumsum = Sum(nnn, dl);
 
 Console.WriteLine($"Сумма всех цифр числа {nnn} равняется {sumsum}. Конец программы");
 
-*/
+
 
 
 //________________________Задача 29_______________________________
@@ -115,5 +115,52 @@ void visual (int [] mmcont)
 
 visual(mass);
 Console.WriteLine("  ");
+
+*/
+
+
+/*
+
+int Dlinna (int n)
+
+{
+int i;
+for (i = 1; n>10; i++)
+{
+    n=n / 10;
+}
+
+return i;
+}
+
+int Sum (int x, int y)
+{
+    int cifra = x;
+    int colvocif = y;
+    int summaVs =0;
+    int powMax = Convert.ToInt32(Math.Pow(10, colvocif+1));
+
+    while (colvocif > 0)
+    {
+        int count = powMax;   // 10000  Math.Pow(10, colvocif);
+        powMax = powMax/10;   // 231 % 1000 / 100
+        colvocif--;
+        int simvol = cifra%powMax/(powMax / 10);
+        //Console.WriteLine(simvol);
+        summaVs = summaVs+simvol;
+    }
+    //Console.WriteLine(summaVs);
+    return summaVs;
+}
+
+
+Console.Write("пожалуйста введите число: ");
+int nnn = Convert.ToInt32(Console.ReadLine());
+
+int dl = Dlinna(nnn);
+
+int sumsum = Sum(nnn, dl);
+
+Console.WriteLine($"Сумма всех цифр числа {nnn} равняется {sumsum}. Конец программы");
 
 */
